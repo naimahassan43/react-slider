@@ -17,7 +17,7 @@ function App() {
         {people.map((person, personIndex) => {
           const { id, image, name, title, quote } = person;
 
-          // positions
+          // slide positions
           let position = "nextSlide";
           if (personIndex === index) {
             position = "activeSlide";
@@ -39,10 +39,11 @@ function App() {
             </article>
           );
         })}
-        <button className="prev">
+
+        <button className="prev" onClick={() => setIndex(index - 1)}>
           <FiChevronLeft />
         </button>
-        <button className="next">
+        <button className="next" onClick={() => setIndex(index + 1)}>
           <FiChevronRight />
         </button>
       </div>
